@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="WOLF OS - One System. Multiple AIs.">
+
+    <meta name="theme-color"
+          content="#07111F">
+
+    <title>WOLF OS — One System. Multiple AIs.</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Arial,
+                sans-serif;
+
+            background:
+                radial-gradient(
+                    circle at 50% -10%,
+                    rgba(40, 130, 210, 0.25),
+                    transparent 40%
+                ),
+                #050B14;
+
+            color: #FFFFFF;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+
+            background: rgba(5, 11, 20, 0.85);
+
+            backdrop-filter: blur(15px);
+
+            border-bottom:
+                1px solid rgba(120, 170, 220, 0.15);
+        }
+
+        .nav-container {
+            max-width: 1150px;
+            margin: auto;
+
+            padding: 16px 25px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: #54BFFF;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+
+            color: #8FA6BF;
+
+            font-size: 14px;
+        }
+
+        .nav-links a:hover {
+            color: #FFFFFF;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 90vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 90px 25px;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .wolf-icon {
+            width: 110px;
+            height: 110px;
+
+            margin: 0 auto 30px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 58px;
+
+            border-radius: 30px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #102944,
+                    #07111F
+                );
+
+            border:
+                1px solid rgba(90, 190, 255, 0.3);
+
+            box-shadow:
+                0 0 70px rgba(40, 160, 255, 0.15);
+        }
+
+        .eyebrow {
+            color: #62C8FF;
+
+            font-size: 12px;
+
+            font-weight: 800;
+
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: clamp(50px, 9vw, 95px);
+
+            line-height: 0.95;
+
+            letter-spacing: -5px;
+
+            margin-bottom: 25px;
+        }
+
+        .tagline {
+            max-width: 720px;
+
+            margin: auto;
+
+            color: #91A7BD;
+
+            font-size: 20px;
+        }
+
+        /* =========================
+           BUTTONS
+        ========================= */
+
+        .buttons {
+            margin-top: 35px;
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 15px;
+
+            flex-wrap: wrap;
+        }
+
+        .button {
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            min-height: 52px;
+
+            padding:
+                0 25px;
+
+            border-radius: 12px;
+
+            font-weight: 800;
+
+            border:
+                1px solid rgba(120, 170, 220, 0.2);
+
+            transition:
+                0.2s;
+        }
+
+        .button:hover {
+            transform:
+                translateY(-3px);
+
+            border-color:
+                rgba(100, 200, 255, 0.6);
+        }
+
+        .primary {
+            background:
+                linear-gradient(
+                    135deg,
+                    #1989DF,
+                    #36B5FF
+                );
+
+            color: #03101D;
+
+            box-shadow:
+                0 10px 30px
+                rgba(40, 160, 255, 0.2);
+        }
+
+        .secondary {
+            background:
+                rgba(255,255,255,0.04);
+        }
+
+        .launch-note {
+            margin-top: 18px;
+
+            color: #617890;
+
+            font-size: 13px;
+        }
+
+        /* =========================
+           SECTIONS
+        ========================= */
+
+        section {
+            max-width: 1150px;
+
+            margin: auto;
+
+            padding:
+                90px 25px;
+        }
+
+        h2 {
+            font-size:
+                clamp(35px, 5vw, 55px);
+
+            line-height: 1;
+
+            letter-spacing:
+                -2px;
+
+            margin:
+                10px 0 15px;
+        }
+
+        .section-description {
+            max-width: 700px;
+
+            color: #91A7BD;
+
+            font-size: 17px;
+        }
+
+        /* =========================
+           AI GRID
+        ========================= */
+
+        .ai-grid {
+            margin-top: 40px;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 18px;
+        }
+
+        .ai-card {
+            padding: 25px;
+
+            min-height: 180px;
+
+            border-radius: 18px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #0E1D30,
+                    #081321
+                );
+
+            border:
+                1px solid
+                rgba(120,170,220,0.15);
+
+            transition:
+                0.2s;
+        }
+
+        .ai-card:hover {
+            transform:
+                translateY(-5px);
+
+            border-color:
+                rgba(90,190,255,0.35);
+
+            box-shadow:
+                0 15px 40px
+                rgba(0,0,0,0.25);
+        }
+
+        .ai-icon {
+            font-size: 35px;
+
+            margin-bottom: 10px;
+        }
+
+        .ai-card h3 {
+            font-size: 22px;
+
+            margin-bottom: 5px;
+        }
+
+        .ai-card p {
+            color: #91A7BD;
+
+            font-size: 14px;
+        }
+
+        /* =========================
+           FEATURES
+        ========================= */
+
+        .feature-grid {
+            margin-top: 40px;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 20px;
+        }
+
+        .feature {
+            padding: 30px;
+
+            border-radius: 18px;
+
+            background:
+                rgba(255,255,255,0.025);
+
+            border:
+                1px solid
+                rgba(120,170,220,0.15);
+        }
+
+        .feature h3 {
+            margin-bottom: 8px;
+
+            font-size: 20px;
+        }
+
+        .feature p {
+            color: #91A7BD;
+        }
+
+        /* =========================
+           COMMAND BOX
+        ========================= */
+
+        .terminal {
+            margin-top: 35px;
+
+            background:
+                #02060B;
+
+            border:
+                1px solid
+                rgba(120,170,220,0.2);
+
+            border-radius: 16px;
+
+            padding: 25px;
+
+            font-family:
+                monospace;
+
+            color:
+                #BFE4FF;
+
+            overflow-x: auto;
+        }
+
+        .green {
+            color: #55E68A;
+        }
+
+        /* =========================
+           DOWNLOAD
+        ========================= */
+
+        .download-box {
+            margin-top: 35px;
+
+            padding: 40px;
+
+            border-radius: 22px;
+
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #0D2137,
+                    #07111F
+                );
+
+            border:
+                1px solid
+                rgba(90,190,255,0.2);
+        }
+
+        .download-box p {
+            max-width: 650px;
+
+            margin:
+                15px auto;
+
+            color: #91A7BD;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            text-align: center;
+
+            padding:
+                45px 25px;
+
+            border-top:
+                1px solid
+                rgba(120,170,220,0.15);
+
+            color:
+                #617890;
+        }
+
+        footer strong {
+            color: white;
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .ai-grid {
+                grid-template-columns:
+                    1fr;
+            }
+
+            .feature-grid {
+                grid-template-columns:
+                    1fr;
+            }
+
+            h1 {
+                letter-spacing:
+                    -3px;
+            }
+
+            .hero {
+                min-height:
+                    80vh;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<nav>
+
+    <div class="nav-container">
+
+        <a href="#" class="logo">
+            🐺 <span>WOLF OS</span>
+        </a>
+
+        <div class="nav-links">
+
+            <a href="#ais">
+                AIs
+            </a>
+
+            <a href="#features">
+                Features
+            </a>
+
+            <a href="#download">
+                Download
+            </a>
+
+            <a
+                href="https://github.com/AgusX-Builds/WolfOS"
+                target="_blank"
+            >
+                GitHub
+            </a>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<header class="hero">
+
+    <div class="hero-content">
+
+        <div class="wolf-icon">
+            🐺
+        </div>
+
+        <div class="eyebrow">
+            WOLF OS • MULTI-AI DESKTOP SYSTEM
+        </div>
+
+        <h1>
+            One System.<br>
+            Multiple AIs.
+        </h1>
+
+        <p class="tagline">
+
+            A desktop AI network built in Python
+            for macOS — with specialized AIs for
+            intelligence, security, creation,
+            gaming, knowledge, voice and more.
+
+        </p>
+
+
+        <div class="buttons">
+
+            <!-- Future WOLF OS protocol -->
+
+            <a
+                class="button primary"
+                href="wolfos://launch"
+            >
+                🐺 LAUNCH WOLF AI
+            </a>
+
+
+            <a
+                class="button secondary"
+                href="#download"
+            >
+                GET WOLF OS
+            </a>
+
+
+            <a
+                class="button secondary"
+                href="https://github.com/AgusX-Builds/WolfOS"
+                target="_blank"
+            >
+                VIEW ON GITHUB
+            </a>
+
+        </div>
+
+
+        <p class="launch-note">
+
+            The Launch button will open WOLF OS
+            once the macOS launcher registers
+            the <strong>wolfos://</strong> protocol.
+
+        </p>
+
+    </div>
+
+</header>
+
+
+<!-- =========================
+     AI NETWORK
+========================= -->
+
+<section id="ais">
+
+    <div class="eyebrow">
+        THE AI NETWORK
+    </div>
+
+    <h2>
+        Meet the WOLF team.
+    </h2>
+
+    <p class="section-description">
+
+        WOLF OS is designed as a network of
+        specialized AIs. Each AI has its own
+        role while WOLF acts as the main system
+        assistant.
+
+    </p>
+
+
+    <div class="ai-grid">
+
+
+        <div class="ai-card">
+
+            <div class="ai-icon">
+                🐺
+            </div>
+
+            <h3>
+                WOLF
+            </h3>
+
+            <p>
+                Main AI • Commands • System Control
+            </p>
+
+        </div>
+
+
+        <div class="ai-card">
+
+            <div class="ai-icon">
+                🧠
+            </div>
+
+            <h3>
+                NOVA
+            </h3>
+
+            <p>
+                Intelligence • Planning •
+                Problem Solving
+            </p>
+
+        </div>
+
+
+        <div class="ai-card">
+
+            <div class="ai-icon">
+                🛡️
+            </div>
+
+            <h3>
+                AEGIS
+            </h3>
+
+            <p>
+                Security • Monitoring •
+                Diagnostics
+            </p>
+
+        </div>
+
+
+        <div class="ai-card">
+
+            <div class="ai-icon">
+                ⚡
+            </div>
+
+            <h3>
+                VOLT
+            </h3>
+
+            <p>
+                Fast Everyday Assistance
+            </p>
+
+        </div>
+
+
+        <div class="ai-card">
+
+            <div class="ai-icon">
+                🎮
+            </div>
+
+            <h3>
+                PIXEL
+            </h3>
+
+            <p>
+                Gaming • Interactive Experiences
+            </p>
+
+        </div>
+
+
+        <div class="ai-card">
+
+            <div class="ai-icon">
+                🔨
+            </div>
+
+            <h3>
+                FORGE
+            </h3>
+
+            <p>
+                Building • Creation • Projects
+            </p>
+
+        </div>
+
+
+        <div class="ai-card">
+
+            <div class="ai-icon">
+                🌐
+            </div>
+
+            <h3>
+                NEXUS
+            </h3>
+
+            <p>
+                Connectivity • Systems
+            </p>
+
+        </div>
+
+
+        <div class="ai-card">
+
+            <div class="ai-icon">
+                📚
+            </div>
+
+            <h3>
+                ORION
+            </h3>
+
+            <p>
+                Knowledge • Information
+            </p>
+
+        </div>
+
+
+        <div class="ai-card">
+
+            <div class="ai-icon">
+                🎤
+            </div>
+
+            <h3>
+                ECHO
+            </h3>
+
+            <p>
+                Voice • Communication
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FEATURES
+========================= -->
+
+<section id="features">
+
+    <div class="eyebrow">
+        WOLF OS FEATURES
+    </div>
+
+    <h2>
+        More than a chatbot.
+    </h2>
+
+    <p class="section-description">
+
+        WOLF OS is being built as a real
+        desktop AI system with multiple
+        specialized programs.
+
+    </p>
+
+
+    <div class="feature-grid">
+
+
+        <div class="feature">
+
+            <h3>
+                🎤 Voice Control
+            </h3>
+
+            <p>
+                WOLF can listen for commands
+                using a local voice-processing
+                pipeline.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <h3>
+                🧩 AI Launcher
+            </h3>
+
+            <p>
+                Launch and switch between
+                specialized WOLF AIs from
+                one desktop system.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <h3>
+                🖥️ macOS Integration
+            </h3>
+
+            <p>
+                WOLF can interact with the
+                macOS desktop and launch
+                supported applications.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <h3>
+                🐍 Python + Tkinter
+            </h3>
+
+            <p>
+                Built as an open-source
+                Python desktop project.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="terminal">
+
+        <div>
+            <span class="green">
+                WOLF
+            </span>
+            &gt; activate Nova
+        </div>
+
+        <br>
+
+        <div>
+            <span class="green">
+                NOVA
+            </span>
+            &gt; Intelligence systems online.
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     DOWNLOAD
+========================= -->
+
+<section id="download">
+
+    <div class="eyebrow">
+        GET STARTED
+    </div>
+
+    <h2>
+        Build with WOLF.
+    </h2>
+
+    <p class="section-description">
+
+        WOLF OS is an open-source project
+        built by AgusX-Builds.
+
+    </p>
+
+
+    <div class="download-box">
+
+        <div class="wolf-icon"
+             style="margin-bottom:20px;">
+            🐺
+        </div>
+
+        <h2>
+            WOLF OS
+        </h2>
+
+        <p>
+
+            Explore the source code,
+            follow development,
+            and eventually download
+            packaged releases.
+
+        </p>
+
+
+        <div class="buttons">
+
+            <a
+                class="button primary"
+                href="https://github.com/AgusX-Builds/WolfOS"
+                target="_blank"
+            >
+                OPEN GITHUB
+            </a>
+
+
+            <a
+                class="button secondary"
+                href="https://github.com/AgusX-Builds/WolfOS/releases"
+                target="_blank"
+            >
+                VIEW RELEASES
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div>
+        🐺 <strong>WOLF OS</strong>
+    </div>
+
+    <div style="margin-top:8px;">
+
+        One System. Multiple AIs.
+
+    </div>
+
+    <div style="margin-top:8px;">
+
+        Built by
+        <strong>
+            AgusX-Builds
+        </strong>
+
+    </div>
+
+</footer>
+
+
+</body>
+</html>
