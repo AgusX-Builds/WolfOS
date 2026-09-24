@@ -2,20 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <meta name="description"
-          content="WOLF OS - One System. Multiple AIs.">
-
-    <meta name="theme-color"
-          content="#07111F">
-
-    <title>WOLF OS — One System. Multiple AIs.</title>
+    <title>WOLF OS</title>
 
     <style>
-
         * {
             box-sizing: border-box;
             margin: 0;
@@ -27,87 +18,94 @@
         }
 
         body {
-            font-family:
-                -apple-system,
-                BlinkMacSystemFont,
-                "Segoe UI",
-                Arial,
-                sans-serif;
-
-            background:
-                radial-gradient(
-                    circle at 50% -10%,
-                    rgba(40, 130, 210, 0.25),
-                    transparent 40%
-                ),
-                #050B14;
-
-            color: #FFFFFF;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #050b13;
+            color: white;
             line-height: 1.6;
         }
 
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
+        /* ==============================
+           HEADER
+        ============================== */
 
-        /* =========================
-           NAVIGATION
-        ========================= */
-
-        nav {
+        header {
             position: sticky;
             top: 0;
-            z-index: 100;
-
-            background: rgba(5, 11, 20, 0.85);
-
-            backdrop-filter: blur(15px);
-
-            border-bottom:
-                1px solid rgba(120, 170, 220, 0.15);
+            z-index: 1000;
+            background: rgba(5, 11, 19, 0.95);
+            border-bottom: 1px solid #18334d;
+            backdrop-filter: blur(10px);
         }
 
-        .nav-container {
-            max-width: 1150px;
+        .nav {
+            max-width: 1200px;
             margin: auto;
-
-            padding: 16px 25px;
+            padding: 18px 25px;
 
             display: flex;
             align-items: center;
             justify-content: space-between;
+            gap: 20px;
         }
 
         .logo {
-            font-size: 20px;
-            font-weight: 800;
-            letter-spacing: 2px;
+            font-size: 25px;
+            font-weight: bold;
+            color: white;
         }
 
         .logo span {
-            color: #54BFFF;
+            color: #35aaff;
         }
 
-        .nav-links {
+        nav {
             display: flex;
-            gap: 25px;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
 
-            color: #8FA6BF;
-
+        nav a {
+            color: #b9d4ea;
+            text-decoration: none;
             font-size: 14px;
+            transition: 0.2s;
         }
 
-        .nav-links a:hover {
-            color: #FFFFFF;
+        nav a:hover {
+            color: #45b5ff;
         }
 
-        /* =========================
+        /* ==============================
+           LANGUAGE
+        ============================== */
+
+        #language-switcher {
+            display: flex;
+            gap: 6px;
+        }
+
+        #language-switcher button {
+            border: 1px solid #28506f;
+            background: #0b1b2d;
+            color: white;
+            padding: 7px 10px;
+            border-radius: 7px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        #language-switcher button:hover {
+            background: #123553;
+        }
+
+        /* ==============================
            HERO
-        ========================= */
+        ============================== */
 
         .hero {
-            min-height: 90vh;
+            min-height: 650px;
 
             display: flex;
             align-items: center;
@@ -115,7 +113,15 @@
 
             text-align: center;
 
-            padding: 90px 25px;
+            padding: 80px 25px;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    #123b5b 0%,
+                    #07111f 40%,
+                    #050b13 75%
+                );
         }
 
         .hero-content {
@@ -123,449 +129,307 @@
         }
 
         .wolf-icon {
-            width: 110px;
-            height: 110px;
-
-            margin: 0 auto 30px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            font-size: 58px;
-
-            border-radius: 30px;
-
-            background:
-                linear-gradient(
-                    145deg,
-                    #102944,
-                    #07111F
-                );
-
-            border:
-                1px solid rgba(90, 190, 255, 0.3);
-
-            box-shadow:
-                0 0 70px rgba(40, 160, 255, 0.15);
+            font-size: 90px;
+            margin-bottom: 20px;
         }
 
-        .eyebrow {
-            color: #62C8FF;
-
-            font-size: 12px;
-
-            font-weight: 800;
-
-            letter-spacing: 4px;
-
-            text-transform: uppercase;
-
-            margin-bottom: 15px;
+        .hero h1 {
+            font-size: clamp(55px, 10vw, 110px);
+            letter-spacing: 5px;
+            margin-bottom: 10px;
         }
 
-        h1 {
-            font-size: clamp(50px, 9vw, 95px);
+        .hero h1 span {
+            color: #39adff;
+        }
 
-            line-height: 0.95;
-
-            letter-spacing: -5px;
-
+        .hero h2 {
+            font-size: clamp(18px, 3vw, 28px);
+            color: #a8c7df;
+            font-weight: normal;
             margin-bottom: 25px;
         }
 
-        .tagline {
-            max-width: 720px;
-
+        .hero p {
+            max-width: 700px;
             margin: auto;
-
-            color: #91A7BD;
-
-            font-size: 20px;
+            color: #8faac0;
+            font-size: 17px;
         }
 
-        /* =========================
-           BUTTONS
-        ========================= */
-
-        .buttons {
+        .hero-buttons {
             margin-top: 35px;
 
             display: flex;
-
             justify-content: center;
-
             gap: 15px;
-
             flex-wrap: wrap;
         }
 
         .button {
-            display: inline-flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            min-height: 52px;
-
-            padding:
-                0 25px;
-
-            border-radius: 12px;
-
-            font-weight: 800;
-
-            border:
-                1px solid rgba(120, 170, 220, 0.2);
-
-            transition:
-                0.2s;
-        }
-
-        .button:hover {
-            transform:
-                translateY(-3px);
-
-            border-color:
-                rgba(100, 200, 255, 0.6);
+            display: inline-block;
+            padding: 13px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.2s;
         }
 
         .primary {
-            background:
-                linear-gradient(
-                    135deg,
-                    #1989DF,
-                    #36B5FF
-                );
+            background: #168ee0;
+            color: white;
+        }
 
-            color: #03101D;
-
-            box-shadow:
-                0 10px 30px
-                rgba(40, 160, 255, 0.2);
+        .primary:hover {
+            background: #2ba8fa;
+            transform: translateY(-2px);
         }
 
         .secondary {
-            background:
-                rgba(255,255,255,0.04);
+            border: 1px solid #315c7a;
+            color: white;
+            background: #0b1b2d;
         }
 
-        .launch-note {
-            margin-top: 18px;
-
-            color: #617890;
-
-            font-size: 13px;
+        .secondary:hover {
+            background: #102c45;
         }
 
-        /* =========================
+        /* ==============================
            SECTIONS
-        ========================= */
+        ============================== */
 
         section {
-            max-width: 1150px;
-
+            max-width: 1200px;
             margin: auto;
-
-            padding:
-                90px 25px;
+            padding: 90px 25px;
         }
 
-        h2 {
-            font-size:
-                clamp(35px, 5vw, 55px);
-
-            line-height: 1;
-
-            letter-spacing:
-                -2px;
-
-            margin:
-                10px 0 15px;
+        .section-title {
+            text-align: center;
+            font-size: 38px;
+            margin-bottom: 15px;
         }
 
-        .section-description {
+        .section-subtitle {
+            text-align: center;
+            color: #8da8bd;
             max-width: 700px;
-
-            color: #91A7BD;
-
-            font-size: 17px;
+            margin: 0 auto 45px;
         }
 
-        /* =========================
+        /* ==============================
            AI GRID
-        ========================= */
+        ============================== */
 
         .ai-grid {
-            margin-top: 40px;
-
             display: grid;
-
             grid-template-columns:
-                repeat(3, 1fr);
-
-            gap: 18px;
-        }
-
-        .ai-card {
-            padding: 25px;
-
-            min-height: 180px;
-
-            border-radius: 18px;
-
-            background:
-                linear-gradient(
-                    145deg,
-                    #0E1D30,
-                    #081321
-                );
-
-            border:
-                1px solid
-                rgba(120,170,220,0.15);
-
-            transition:
-                0.2s;
-        }
-
-        .ai-card:hover {
-            transform:
-                translateY(-5px);
-
-            border-color:
-                rgba(90,190,255,0.35);
-
-            box-shadow:
-                0 15px 40px
-                rgba(0,0,0,0.25);
-        }
-
-        .ai-icon {
-            font-size: 35px;
-
-            margin-bottom: 10px;
-        }
-
-        .ai-card h3 {
-            font-size: 22px;
-
-            margin-bottom: 5px;
-        }
-
-        .ai-card p {
-            color: #91A7BD;
-
-            font-size: 14px;
-        }
-
-        /* =========================
-           FEATURES
-        ========================= */
-
-        .feature-grid {
-            margin-top: 40px;
-
-            display: grid;
-
-            grid-template-columns:
-                repeat(2, 1fr);
+                repeat(auto-fit, minmax(250px, 1fr));
 
             gap: 20px;
         }
 
+        .ai-card {
+            background: linear-gradient(
+                145deg,
+                #0c1b2b,
+                #07111f
+            );
+
+            border: 1px solid #193852;
+
+            border-radius: 15px;
+
+            padding: 25px;
+
+            transition: 0.25s;
+        }
+
+        .ai-card:hover {
+            transform: translateY(-5px);
+            border-color: #299ce8;
+            box-shadow:
+                0 10px 35px rgba(0, 120, 220, 0.15);
+        }
+
+        .ai-icon {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        .ai-card h3 {
+            font-size: 23px;
+            margin-bottom: 8px;
+        }
+
+        .ai-card p {
+            color: #91aabd;
+            min-height: 70px;
+        }
+
+        .ai-role {
+            color: #40aeef;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+        /* ==============================
+           ABOUT
+        ============================== */
+
+        .about-box {
+            background: #091625;
+            border: 1px solid #193852;
+            border-radius: 15px;
+            padding: 35px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .about-box p {
+            color: #a0b7ca;
+            margin-bottom: 18px;
+        }
+
+        /* ==============================
+           FEATURES
+        ============================== */
+
+        .features {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
         .feature {
-            padding: 30px;
-
-            border-radius: 18px;
-
-            background:
-                rgba(255,255,255,0.025);
-
-            border:
-                1px solid
-                rgba(120,170,220,0.15);
+            padding: 25px;
+            background: #091625;
+            border: 1px solid #193852;
+            border-radius: 13px;
         }
 
         .feature h3 {
             margin-bottom: 8px;
-
-            font-size: 20px;
         }
 
         .feature p {
-            color: #91A7BD;
+            color: #91aabd;
         }
 
-        /* =========================
-           COMMAND BOX
-        ========================= */
-
-        .terminal {
-            margin-top: 35px;
-
-            background:
-                #02060B;
-
-            border:
-                1px solid
-                rgba(120,170,220,0.2);
-
-            border-radius: 16px;
-
-            padding: 25px;
-
-            font-family:
-                monospace;
-
-            color:
-                #BFE4FF;
-
-            overflow-x: auto;
-        }
-
-        .green {
-            color: #55E68A;
-        }
-
-        /* =========================
-           DOWNLOAD
-        ========================= */
-
-        .download-box {
-            margin-top: 35px;
-
-            padding: 40px;
-
-            border-radius: 22px;
-
-            text-align: center;
-
-            background:
-                linear-gradient(
-                    145deg,
-                    #0D2137,
-                    #07111F
-                );
-
-            border:
-                1px solid
-                rgba(90,190,255,0.2);
-        }
-
-        .download-box p {
-            max-width: 650px;
-
-            margin:
-                15px auto;
-
-            color: #91A7BD;
-        }
-
-        /* =========================
+        /* ==============================
            FOOTER
-        ========================= */
+        ============================== */
 
         footer {
+            border-top: 1px solid #18334d;
+            padding: 35px 25px;
             text-align: center;
-
-            padding:
-                45px 25px;
-
-            border-top:
-                1px solid
-                rgba(120,170,220,0.15);
-
-            color:
-                #617890;
+            color: #718da3;
         }
 
         footer strong {
             color: white;
         }
 
-        /* =========================
+        /* ==============================
            MOBILE
-        ========================= */
+        ============================== */
 
-        @media (max-width: 800px) {
+        @media (max-width: 700px) {
 
-            .nav-links {
-                display: none;
+            .nav {
+                flex-direction: column;
             }
 
-            .ai-grid {
-                grid-template-columns:
-                    1fr;
-            }
-
-            .feature-grid {
-                grid-template-columns:
-                    1fr;
-            }
-
-            h1 {
-                letter-spacing:
-                    -3px;
+            nav {
+                gap: 12px;
             }
 
             .hero {
-                min-height:
-                    80vh;
+                min-height: 570px;
+            }
+
+            section {
+                padding: 65px 18px;
+            }
+
+            .hero h1 {
+                letter-spacing: 2px;
             }
         }
-
     </style>
 </head>
 
 <body>
 
-<!-- =========================
-     NAVIGATION
-========================= -->
+<!-- ==========================================
+     HEADER
+========================================== -->
 
-<nav>
+<header>
 
-    <div class="nav-container">
+    <div class="nav">
 
-        <a href="#" class="logo">
-            🐺 <span>WOLF OS</span>
-        </a>
+        <div class="logo">
+            🐺 WOLF<span> OS</span>
+        </div>
 
-        <div class="nav-links">
+        <nav>
 
-            <a href="#ais">
+            <a href="#home" data-i18n="home">
+                HOME
+            </a>
+
+            <a href="#ais" data-i18n="ais">
                 AIs
             </a>
 
-            <a href="#features">
-                Features
+            <a href="#features" data-i18n="features">
+                FEATURES
             </a>
 
-            <a href="#download">
-                Download
+            <a href="#about" data-i18n="about">
+                ABOUT
             </a>
 
             <a
                 href="https://github.com/AgusX-Builds/WolfOS"
                 target="_blank"
+                data-i18n="github"
             >
-                GitHub
+                GITHUB
             </a>
+
+        </nav>
+
+        <div id="language-switcher">
+
+            <button onclick="setLanguage('en')">
+                🇺🇸 English
+            </button>
+
+            <button onclick="setLanguage('es')">
+                🇪🇸 Español
+            </button>
 
         </div>
 
     </div>
 
-</nav>
+</header>
 
 
-<!-- =========================
-     HERO
-========================= -->
+<!-- ==========================================
+     HOME
+========================================== -->
 
-<header class="hero">
+<main>
+
+<section class="hero" id="home">
 
     <div class="hero-content">
 
@@ -573,95 +437,70 @@
             🐺
         </div>
 
-        <div class="eyebrow">
-            WOLF OS • MULTI-AI DESKTOP SYSTEM
-        </div>
-
         <h1>
-            One System.<br>
-            Multiple AIs.
+            WOLF<span>OS</span>
         </h1>
 
-        <p class="tagline">
+        <h2 data-i18n="subtitle">
+            ONE SYSTEM. MULTIPLE INTELLIGENCES.
+        </h2>
 
-            A desktop AI network built in Python
-            for macOS — with specialized AIs for
-            intelligence, security, creation,
-            gaming, knowledge, voice and more.
-
+        <p data-i18n="description">
+            WOLF OS is a personal AI operating system
+            built around multiple specialized artificial
+            intelligences working together.
         </p>
 
-
-        <div class="buttons">
-
-            <!-- Future WOLF OS protocol -->
+        <div class="hero-buttons">
 
             <a
+                href="#ais"
                 class="button primary"
-                href="wolfos://launch"
+                data-i18n="explore"
             >
-                🐺 LAUNCH WOLF AI
+                EXPLORE THE AIs
             </a>
 
-
             <a
-                class="button secondary"
-                href="#download"
-            >
-                GET WOLF OS
-            </a>
-
-
-            <a
-                class="button secondary"
                 href="https://github.com/AgusX-Builds/WolfOS"
                 target="_blank"
+                class="button secondary"
+                data-i18n="viewgithub"
             >
                 VIEW ON GITHUB
             </a>
 
         </div>
 
-
-        <p class="launch-note">
-
-            The Launch button will open WOLF OS
-            once the macOS launcher registers
-            the <strong>wolfos://</strong> protocol.
-
-        </p>
-
     </div>
 
-</header>
+</section>
 
 
-<!-- =========================
-     AI NETWORK
-========================= -->
+<!-- ==========================================
+     AIs
+========================================== -->
 
 <section id="ais">
 
-    <div class="eyebrow">
-        THE AI NETWORK
-    </div>
-
-    <h2>
-        Meet the WOLF team.
+    <h2
+        class="section-title"
+        data-i18n="aiTitle"
+    >
+        THE WOLF OS AIs
     </h2>
 
-    <p class="section-description">
-
-        WOLF OS is designed as a network of
-        specialized AIs. Each AI has its own
-        role while WOLF acts as the main system
-        assistant.
-
+    <p
+        class="section-subtitle"
+        data-i18n="aiSubtitle"
+    >
+        Every AI has a different role inside WOLF OS.
     </p>
 
 
     <div class="ai-grid">
 
+        <!-- WOLF -->
 
         <div class="ai-card">
 
@@ -670,15 +509,26 @@
             </div>
 
             <h3>
-                WOLF
+                WOLF AI
             </h3>
 
-            <p>
-                Main AI • Commands • System Control
+            <div
+                class="ai-role"
+                data-i18n="wolfRole"
+            >
+                MAIN ASSISTANT
+            </div>
+
+            <p data-i18n="wolfDescription">
+                The main WOLF OS assistant.
+                Voice commands, computer control,
+                calculations, notes and system commands.
             </p>
 
         </div>
 
+
+        <!-- NOVA -->
 
         <div class="ai-card">
 
@@ -687,34 +537,25 @@
             </div>
 
             <h3>
-                NOVA
+                NOVA AI
             </h3>
 
-            <p>
-                Intelligence • Planning •
-                Problem Solving
-            </p>
-
-        </div>
-
-
-        <div class="ai-card">
-
-            <div class="ai-icon">
-                🛡️
+            <div
+                class="ai-role"
+                data-i18n="novaRole"
+            >
+                INTELLIGENCE
             </div>
 
-            <h3>
-                AEGIS
-            </h3>
-
-            <p>
-                Security • Monitoring •
-                Diagnostics
+            <p data-i18n="novaDescription">
+                The intelligence, planning and
+                problem-solving AI of WOLF OS.
             </p>
 
         </div>
 
+
+        <!-- VOLT -->
 
         <div class="ai-card">
 
@@ -723,32 +564,79 @@
             </div>
 
             <h3>
-                VOLT
+                VOLT AI
             </h3>
 
-            <p>
-                Fast Everyday Assistance
+            <div
+                class="ai-role"
+                data-i18n="voltRole"
+            >
+                EASY ACCESS
+            </div>
+
+            <p data-i18n="voltDescription">
+                A fast and simple AI designed for
+                quick access and everyday tasks.
             </p>
 
         </div>
 
+
+        <!-- AEGIS -->
 
         <div class="ai-card">
 
             <div class="ai-icon">
-                🎮
+                🛡️
             </div>
 
             <h3>
-                PIXEL
+                AEGIS AI
             </h3>
 
-            <p>
-                Gaming • Interactive Experiences
+            <div
+                class="ai-role"
+                data-i18n="aegisRole"
+            >
+                SECURITY
+            </div>
+
+            <p data-i18n="aegisDescription">
+                Security, diagnostics and system-monitoring
+                AI for WOLF OS.
             </p>
 
         </div>
 
+
+        <!-- PIXEL -->
+
+        <div class="ai-card">
+
+            <div class="ai-icon">
+                🎨
+            </div>
+
+            <h3>
+                PIXEL AI
+            </h3>
+
+            <div
+                class="ai-role"
+                data-i18n="pixelRole"
+            >
+                CREATIVE
+            </div>
+
+            <p data-i18n="pixelDescription">
+                Creative tools for visual ideas,
+                design and digital projects.
+            </p>
+
+        </div>
+
+
+        <!-- FORGE -->
 
         <div class="ai-card">
 
@@ -757,62 +645,100 @@
             </div>
 
             <h3>
-                FORGE
+                FORGE AI
             </h3>
 
-            <p>
-                Building • Creation • Projects
+            <div
+                class="ai-role"
+                data-i18n="forgeRole"
+            >
+                BUILDING
+            </div>
+
+            <p data-i18n="forgeDescription">
+                A development-focused AI for building
+                projects and solving technical problems.
             </p>
 
         </div>
 
 
+        <!-- NEXUS -->
+
         <div class="ai-card">
 
             <div class="ai-icon">
-                🌐
+                🔗
             </div>
 
             <h3>
-                NEXUS
+                NEXUS AI
             </h3>
 
-            <p>
-                Connectivity • Systems
+            <div
+                class="ai-role"
+                data-i18n="nexusRole"
+            >
+                CONNECTION
+            </div>
+
+            <p data-i18n="nexusDescription">
+                Designed to connect systems, tools
+                and different parts of WOLF OS.
             </p>
 
         </div>
 
 
+        <!-- ECHO -->
+
         <div class="ai-card">
 
             <div class="ai-icon">
-                📚
+                🔊
             </div>
 
             <h3>
-                ORION
+                ECHO AI
             </h3>
 
-            <p>
-                Knowledge • Information
+            <div
+                class="ai-role"
+                data-i18n="echoRole"
+            >
+                VOICE
+            </div>
+
+            <p data-i18n="echoDescription">
+                Focused on voice, speech and
+                communication features.
             </p>
 
         </div>
 
 
+        <!-- ORION -->
+
         <div class="ai-card">
 
             <div class="ai-icon">
-                🎤
+                🌌
             </div>
 
             <h3>
-                ECHO
+                ORION AI
             </h3>
 
-            <p>
-                Voice • Communication
+            <div
+                class="ai-role"
+                data-i18n="orionRole"
+            >
+                EXPLORATION
+            </div>
+
+            <p data-i18n="orionDescription">
+                An experimental AI for exploration,
+                ideas and future WOLF OS systems.
             </p>
 
         </div>
@@ -822,42 +748,38 @@
 </section>
 
 
-<!-- =========================
+<!-- ==========================================
      FEATURES
-========================= -->
+========================================== -->
 
 <section id="features">
 
-    <div class="eyebrow">
+    <h2
+        class="section-title"
+        data-i18n="featuresTitle"
+    >
         WOLF OS FEATURES
-    </div>
-
-    <h2>
-        More than a chatbot.
     </h2>
 
-    <p class="section-description">
-
-        WOLF OS is being built as a real
-        desktop AI system with multiple
-        specialized programs.
-
+    <p
+        class="section-subtitle"
+        data-i18n="featuresSubtitle"
+    >
+        Built as a modular AI system.
     </p>
 
 
-    <div class="feature-grid">
-
+    <div class="features">
 
         <div class="feature">
 
-            <h3>
+            <h3 data-i18n="feature1Title">
                 🎤 Voice Control
             </h3>
 
-            <p>
-                WOLF can listen for commands
-                using a local voice-processing
-                pipeline.
+            <p data-i18n="feature1Text">
+                Use voice commands to interact
+                with WOLF AI.
             </p>
 
         </div>
@@ -865,14 +787,13 @@
 
         <div class="feature">
 
-            <h3>
-                🧩 AI Launcher
+            <h3 data-i18n="feature2Title">
+                🧠 Multiple AIs
             </h3>
 
-            <p>
-                Launch and switch between
-                specialized WOLF AIs from
-                one desktop system.
+            <p data-i18n="feature2Text">
+                Specialized AIs work together
+                inside one system.
             </p>
 
         </div>
@@ -880,14 +801,13 @@
 
         <div class="feature">
 
-            <h3>
-                🖥️ macOS Integration
+            <h3 data-i18n="feature3Title">
+                💻 macOS Integration
             </h3>
 
-            <p>
-                WOLF can interact with the
-                macOS desktop and launch
-                supported applications.
+            <p data-i18n="feature3Text">
+                WOLF can interact with applications,
+                folders and system tools.
             </p>
 
         </div>
@@ -895,36 +815,15 @@
 
         <div class="feature">
 
-            <h3>
-                🐍 Python + Tkinter
+            <h3 data-i18n="feature4Title">
+                🌎 Bilingual
             </h3>
 
-            <p>
-                Built as an open-source
-                Python desktop project.
+            <p data-i18n="feature4Text">
+                The WOLF OS website can be used
+                in English or Spanish.
             </p>
 
-        </div>
-
-    </div>
-
-
-    <div class="terminal">
-
-        <div>
-            <span class="green">
-                WOLF
-            </span>
-            &gt; activate Nova
-        </div>
-
-        <br>
-
-        <div>
-            <span class="green">
-                NOVA
-            </span>
-            &gt; Intelligence systems online.
         </div>
 
     </div>
@@ -932,102 +831,384 @@
 </section>
 
 
-<!-- =========================
-     DOWNLOAD
-========================= -->
+<!-- ==========================================
+     ABOUT
+========================================== -->
 
-<section id="download">
+<section id="about">
 
-    <div class="eyebrow">
-        GET STARTED
-    </div>
-
-    <h2>
-        Build with WOLF.
+    <h2
+        class="section-title"
+        data-i18n="aboutTitle"
+    >
+        ABOUT WOLF OS
     </h2>
 
-    <p class="section-description">
+    <div class="about-box">
 
-        WOLF OS is an open-source project
-        built by AgusX-Builds.
-
-    </p>
-
-
-    <div class="download-box">
-
-        <div class="wolf-icon"
-             style="margin-bottom:20px;">
-            🐺
-        </div>
-
-        <h2>
-            WOLF OS
-        </h2>
-
-        <p>
-
-            Explore the source code,
-            follow development,
-            and eventually download
-            packaged releases.
-
+        <p data-i18n="aboutText1">
+            WOLF OS is a personal project built around
+            the idea of a modular artificial-intelligence
+            operating system.
         </p>
 
+        <p data-i18n="aboutText2">
+            Instead of having one AI do everything,
+            WOLF OS is designed around multiple
+            specialized AIs.
+        </p>
 
-        <div class="buttons">
-
-            <a
-                class="button primary"
-                href="https://github.com/AgusX-Builds/WolfOS"
-                target="_blank"
-            >
-                OPEN GITHUB
-            </a>
-
-
-            <a
-                class="button secondary"
-                href="https://github.com/AgusX-Builds/WolfOS/releases"
-                target="_blank"
-            >
-                VIEW RELEASES
-            </a>
-
-        </div>
+        <p data-i18n="aboutText3">
+            The project is continuously being developed
+            and new systems are being added.
+        </p>
 
     </div>
 
 </section>
 
+</main>
 
-<!-- =========================
+
+<!-- ==========================================
      FOOTER
-========================= -->
+========================================== -->
 
 <footer>
 
-    <div>
-        🐺 <strong>WOLF OS</strong>
-    </div>
+    <strong>🐺 WOLF OS</strong>
 
-    <div style="margin-top:8px;">
+    <br><br>
 
-        One System. Multiple AIs.
+    <span data-i18n="footer">
+        One System. Multiple Intelligences.
+    </span>
 
-    </div>
+    <br><br>
 
-    <div style="margin-top:8px;">
-
-        Built by
-        <strong>
-            AgusX-Builds
-        </strong>
-
-    </div>
+    © 2026 AgusX-Builds
 
 </footer>
 
+
+<!-- ==========================================
+     LANGUAGE SYSTEM
+========================================== -->
+
+<script>
+
+const translations = {
+
+    en: {
+
+        home: "HOME",
+        ais: "AIs",
+        features: "FEATURES",
+        about: "ABOUT",
+        github: "GITHUB",
+
+        subtitle:
+            "ONE SYSTEM. MULTIPLE INTELLIGENCES.",
+
+        description:
+            "WOLF OS is a personal AI operating system built around multiple specialized artificial intelligences working together.",
+
+        explore:
+            "EXPLORE THE AIs",
+
+        viewgithub:
+            "VIEW ON GITHUB",
+
+        aiTitle:
+            "THE WOLF OS AIs",
+
+        aiSubtitle:
+            "Every AI has a different role inside WOLF OS.",
+
+        wolfRole:
+            "MAIN ASSISTANT",
+
+        wolfDescription:
+            "The main WOLF OS assistant. Voice commands, computer control, calculations, notes and system commands.",
+
+        novaRole:
+            "INTELLIGENCE",
+
+        novaDescription:
+            "The intelligence, planning and problem-solving AI of WOLF OS.",
+
+        voltRole:
+            "EASY ACCESS",
+
+        voltDescription:
+            "A fast and simple AI designed for quick access and everyday tasks.",
+
+        aegisRole:
+            "SECURITY",
+
+        aegisDescription:
+            "Security, diagnostics and system-monitoring AI for WOLF OS.",
+
+        pixelRole:
+            "CREATIVE",
+
+        pixelDescription:
+            "Creative tools for visual ideas, design and digital projects.",
+
+        forgeRole:
+            "BUILDING",
+
+        forgeDescription:
+            "A development-focused AI for building projects and solving technical problems.",
+
+        nexusRole:
+            "CONNECTION",
+
+        nexusDescription:
+            "Designed to connect systems, tools and different parts of WOLF OS.",
+
+        echoRole:
+            "VOICE",
+
+        echoDescription:
+            "Focused on voice, speech and communication features.",
+
+        orionRole:
+            "EXPLORATION",
+
+        orionDescription:
+            "An experimental AI for exploration, ideas and future WOLF OS systems.",
+
+        featuresTitle:
+            "WOLF OS FEATURES",
+
+        featuresSubtitle:
+            "Built as a modular AI system.",
+
+        feature1Title:
+            "🎤 Voice Control",
+
+        feature1Text:
+            "Use voice commands to interact with WOLF AI.",
+
+        feature2Title:
+            "🧠 Multiple AIs",
+
+        feature2Text:
+            "Specialized AIs work together inside one system.",
+
+        feature3Title:
+            "💻 macOS Integration",
+
+        feature3Text:
+            "WOLF can interact with applications, folders and system tools.",
+
+        feature4Title:
+            "🌎 Bilingual",
+
+        feature4Text:
+            "The WOLF OS website can be used in English or Spanish.",
+
+        aboutTitle:
+            "ABOUT WOLF OS",
+
+        aboutText1:
+            "WOLF OS is a personal project built around the idea of a modular artificial-intelligence operating system.",
+
+        aboutText2:
+            "Instead of having one AI do everything, WOLF OS is designed around multiple specialized AIs.",
+
+        aboutText3:
+            "The project is continuously being developed and new systems are being added.",
+
+        footer:
+            "One System. Multiple Intelligences."
+    },
+
+
+    es: {
+
+        home: "INICIO",
+        ais: "IAS",
+        features: "FUNCIONES",
+        about: "SOBRE WOLF OS",
+        github: "GITHUB",
+
+        subtitle:
+            "UN SISTEMA. MÚLTIPLES INTELIGENCIAS.",
+
+        description:
+            "WOLF OS es un sistema operativo de inteligencia artificial personal construido alrededor de múltiples IAs especializadas que trabajan juntas.",
+
+        explore:
+            "EXPLORAR LAS IAS",
+
+        viewgithub:
+            "VER EN GITHUB",
+
+        aiTitle:
+            "LAS IAS DE WOLF OS",
+
+        aiSubtitle:
+            "Cada IA tiene una función diferente dentro de WOLF OS.",
+
+        wolfRole:
+            "ASISTENTE PRINCIPAL",
+
+        wolfDescription:
+            "El asistente principal de WOLF OS. Comandos de voz, control del computador, cálculos, notas y comandos del sistema.",
+
+        novaRole:
+            "INTELIGENCIA",
+
+        novaDescription:
+            "La IA de inteligencia, planificación y resolución de problemas de WOLF OS.",
+
+        voltRole:
+            "ACCESO RÁPIDO",
+
+        voltDescription:
+            "Una IA rápida y sencilla diseñada para acceso rápido y tareas cotidianas.",
+
+        aegisRole:
+            "SEGURIDAD",
+
+        aegisDescription:
+            "IA de seguridad, diagnóstico y monitoreo del sistema para WOLF OS.",
+
+        pixelRole:
+            "CREATIVIDAD",
+
+        pixelDescription:
+            "Herramientas creativas para ideas visuales, diseño y proyectos digitales.",
+
+        forgeRole:
+            "CONSTRUCCIÓN",
+
+        forgeDescription:
+            "Una IA enfocada en desarrollo para construir proyectos y resolver problemas técnicos.",
+
+        nexusRole:
+            "CONEXIÓN",
+
+        nexusDescription:
+            "Diseñada para conectar sistemas, herramientas y diferentes partes de WOLF OS.",
+
+        echoRole:
+            "VOZ",
+
+        echoDescription:
+            "Enfocada en voz, habla y funciones de comunicación.",
+
+        orionRole:
+            "EXPLORACIÓN",
+
+        orionDescription:
+            "Una IA experimental para exploración, ideas y futuros sistemas de WOLF OS.",
+
+        featuresTitle:
+            "FUNCIONES DE WOLF OS",
+
+        featuresSubtitle:
+            "Construido como un sistema de IA modular.",
+
+        feature1Title:
+            "🎤 Control por Voz",
+
+        feature1Text:
+            "Usa comandos de voz para interactuar con WOLF AI.",
+
+        feature2Title:
+            "🧠 Múltiples IAs",
+
+        feature2Text:
+            "IAs especializadas trabajan juntas dentro de un solo sistema.",
+
+        feature3Title:
+            "💻 Integración con macOS",
+
+        feature3Text:
+            "WOLF puede interactuar con aplicaciones, carpetas y herramientas del sistema.",
+
+        feature4Title:
+            "🌎 Bilingüe",
+
+        feature4Text:
+            "El sitio web de WOLF OS puede utilizarse en inglés o español.",
+
+        aboutTitle:
+            "SOBRE WOLF OS",
+
+        aboutText1:
+            "WOLF OS es un proyecto personal basado en la idea de un sistema operativo modular de inteligencia artificial.",
+
+        aboutText2:
+            "En lugar de tener una sola IA que haga todo, WOLF OS está diseñado alrededor de múltiples IAs especializadas.",
+
+        aboutText3:
+            "El proyecto continúa desarrollándose y se siguen agregando nuevos sistemas.",
+
+        footer:
+            "Un Sistema. Múltiples Inteligencias."
+    }
+
+};
+
+
+function setLanguage(language) {
+
+    const selected =
+        translations[language];
+
+    document.documentElement.lang =
+        language;
+
+
+    document
+        .querySelectorAll("[data-i18n]")
+        .forEach(element => {
+
+            const key =
+                element.getAttribute("data-i18n");
+
+            if (
+                selected[key] !== undefined
+            ) {
+
+                element.textContent =
+                    selected[key];
+
+            }
+
+        });
+
+
+    localStorage.setItem(
+        "wolfLanguage",
+        language
+    );
+}
+
+
+function loadLanguage() {
+
+    const savedLanguage =
+        localStorage.getItem(
+            "wolfLanguage"
+        ) || "en";
+
+    setLanguage(
+        savedLanguage
+    );
+}
+
+
+document.addEventListener(
+    "DOMContentLoaded",
+    loadLanguage
+);
+
+</script>
 
 </body>
 </html>
